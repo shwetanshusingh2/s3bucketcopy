@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'python C:/Users/Hp/PycharmProjects/untitled4/helper.py'
+                bat 'rmdir /Q /S s3bucketcopy'
+                bat 'git clone https://github.com/shwetanshusingh2/s3bucketcopy'
+                bat 'python s3bucketcopy/helper.py'
             }
         }
     }
